@@ -1,0 +1,11 @@
+py_library(
+    name = "foo_lib",
+    srcs = glob(["streamlit/**/*.py"]),
+)
+
+py_binary(
+    name = "foo",
+    srcs = ["setup.py"],
+    main = "setup.py",
+    deps = [":foo_lib"],
+)
